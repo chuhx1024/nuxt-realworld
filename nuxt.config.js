@@ -44,7 +44,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios'
   ],
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+    baseURL: 'https://conduit.productionready.io/api/'
+  },
   /*
   ** Build configuration
   */

@@ -17,17 +17,18 @@
 
             <form>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="text" placeholder="Your Name">
+                <input v-model="user.username" class="form-control form-control-lg" type="text" placeholder="Your Name">
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="text" placeholder="Email">
+                <input v-model="user.email" class="form-control form-control-lg" type="text" placeholder="Email">
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="password" placeholder="Password">
+                <!-- <input v-model="user.password" class="form-control form-control-lg" type="password" placeholder="Password"> -->
+                <input v-model="user.password" class="form-control form-control-lg" placeholder="Password">
               </fieldset>
-              <button class="btn btn-lg btn-primary pull-xs-right">
+              <div class="btn btn-lg btn-primary pull-xs-right" @click="fetchSomething">
                 Sign up
-              </button>
+              </div>
             </form>
           </div>
         </div>
@@ -38,7 +39,24 @@
 
 <script>
 export default {
-  name: 'SignUp'
+  name: 'SignUp',
+  data () {
+    return {
+      user: {
+        username: '',
+        email: '',
+        password: ''
+      },
+
+      ip: ''
+    }
+  },
+  methods: {
+    async fetchSomething () {
+      const ip = await this.$axios.$post('/users/login', { user: this.user })
+      this.ip = ip
+    }
+  }
 
 }
 </script>

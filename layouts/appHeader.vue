@@ -5,24 +5,31 @@
     <link rel="stylesheet" href="//demo.productionready.io/main.css">
     <nav class="navbar navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html">conduit</a>
+        <nuxt-link class="navbar-brand" to="/">
+          conduit
+        </nuxt-link>
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
-            <a class="nav-link active" href="">Home</a>
+            <nuxt-link class="nav-link" to="/">
+              Home
+            </nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <nuxt-link class="nav-link" to="/newPost">
               <i class="ion-compose" />&nbsp;New Post
-            </a>
+            </nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="ion-gear-a" />&nbsp;Settings
-            </a>
+            <nuxt-link class="nav-link" to="/settings">
+              <i class="ion-gear-a" />&nbsp;
+              Settings
+            </nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Sign up</a>
+            <nuxt-link class="nav-link" to="/signUp">
+              Sign up
+            </nuxt-link>
           </li>
         </ul>
       </div>

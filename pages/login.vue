@@ -38,7 +38,7 @@ export default {
     return {
       user: {
         email: 'chuhx1024@126.com',
-        password: '123456@ope'
+        password: '123456@open'
       },
 
       ip: ''

@@ -9,7 +9,7 @@
             </h1>
 
             <ul class="error-messages">
-              <li>That email is already taken</li>
+              <!-- <li>That email is already taken</li> -->
             </ul>
 
             <form>

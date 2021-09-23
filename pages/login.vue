@@ -5,22 +5,14 @@
         <div class="row">
           <div class="col-md-6 offset-md-3 col-xs-12">
             <h1 class="text-xs-center">
-              Sign up
+              Sign in
             </h1>
-            <p class="text-xs-center">
-              <nuxt-link class="nav-link" to="/login">
-                Have an account?
-              </nuxt-link>
-            </p>
 
             <ul class="error-messages">
               <li>That email is already taken</li>
             </ul>
 
             <form>
-              <fieldset class="form-group">
-                <input v-model="user.username" class="form-control form-control-lg" type="text" placeholder="Your Name">
-              </fieldset>
               <fieldset class="form-group">
                 <input v-model="user.email" class="form-control form-control-lg" type="text" placeholder="Email">
               </fieldset>
@@ -45,9 +37,8 @@ export default {
   data () {
     return {
       user: {
-        username: '',
-        email: '',
-        password: ''
+        email: 'chuhx1024@126.com',
+        password: '123456@ope'
       },
 
       ip: ''
@@ -55,8 +46,10 @@ export default {
   },
   methods: {
     async fetchSomething () {
-      const ip = await this.$axios.$post('/users', { user: this.user })
-      this.ip = ip
+      const isOk = await this.$axios.$post('/users/login', { user: this.user })
+      if (isOk) {
+        this.$router.push('/')
+      }
     }
   }
 

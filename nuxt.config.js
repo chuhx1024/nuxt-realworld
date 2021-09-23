@@ -15,6 +15,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  server: {
+    host: '0.0.0.0', // 默认是 localhost 只能用于本机访问 0.0.0.0  会监听所有的网卡地址 使用外网就可以访问了
+    port: 3000
+  },
   /*
   ** Customize the progress-bar color
   */
